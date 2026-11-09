@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+*.db
+node_modules/
+.env
+.scratch/
+.logs/
+run/
+ddl_demo/

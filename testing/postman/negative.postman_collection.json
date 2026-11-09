@@ -1,0 +1,28 @@
+{
+  "info": {
+    "name": "Намеренный отрицательный тест",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Ожидаем неверный HTTP 404",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{base_url}}/get"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"HTTP 404 (намеренный сбой)\", function () { pm.response.to.have.status(404); });",
+              "pm.test(\"Поле url — строка\", function () { pm.expect(pm.response.json().url).to.be.a(\"string\"); });"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

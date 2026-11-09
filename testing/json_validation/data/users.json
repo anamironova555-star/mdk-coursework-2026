@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Иван",
+      "email": "ivan@mail.ru",
+      "active": true
+    },
+    {
+      "id": 2,
+      "name": "Мария",
+      "email": "maria@mail.ru",
+      "active": true
+    },
+    {
+      "id": 3,
+      "name": "Пётр",
+      "email": "petr@mail.ru",
+      "active": true
+    }
+  ]
+}

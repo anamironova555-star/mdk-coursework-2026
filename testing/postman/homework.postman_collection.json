@@ -1,0 +1,49 @@
+{
+  "info": {
+    "name": "Домашняя работа",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Первый GET",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{base_url}}/get"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"HTTP 200\", function () { pm.response.to.have.status(200); });",
+              "pm.test(\"Поле url — строка\", function () { pm.expect(pm.response.json().url).to.be.a(\"string\"); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "GET с именем",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "{{base_url}}/get?name={{student_name}}"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"HTTP 200\", function () { pm.response.to.have.status(200); });",
+              "pm.test(\"Поле url — строка\", function () { pm.expect(pm.response.json().url).to.be.a(\"string\"); });",
+              "pm.test(\"args.name совпадает с именем\", function () { pm.expect(pm.response.json().args.name).to.eql(pm.environment.get(\"student_name\")); });"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="ru">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Список задач · Практика 4</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head>
+<body><main><header><p class="eyebrow">МДК.09.01 / ПРАКТИКА 4</p><h1>Мой список задач</h1><p class="intro">Небольшие шаги к большому результату.</p></header>
+{% if error %}<p class="error" role="alert">{{ error }}</p>{% endif %}
+
+<section aria-label="Задачи"><div class="section-head"><h2>Все задачи</h2><span>{{ items|length }} в списке</span></div>
+{% if items %}<ul>{% for item in items %}<li class="{{ 'done' if item.status == 'done' else '' }}"><span class="number">#{{ item.id }}</span><span class="title">{{ item.title }}</span><span class="status">{{ 'Выполнено' if item.status == 'done' else 'Новая' }}</span></li>{% endfor %}</ul>
+{% else %}<div class="empty"><h3>Список пуст</h3><p>Добавьте задачу через crud_console.py и обновите страницу.</p></div>{% endif %}</section>
+<footer>Python · Flask · SQLite <span>Учебный проект / 2026</span></footer></main></body></html>

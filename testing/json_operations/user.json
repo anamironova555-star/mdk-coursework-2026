@@ -1,0 +1,11 @@
+{
+  "id": 1,
+  "name": "Иван",
+  "email": "ivan@mail.ru",
+  "age": 25,
+  "active": true,
+  "roles": [
+    "admin",
+    "user"
+  ]
+}

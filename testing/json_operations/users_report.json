@@ -1,0 +1,11 @@
+{
+  "total": 3,
+  "active": 2,
+  "average_age": 24.0,
+  "adults": [
+    "Иван",
+    "Мария"
+  ],
+  "oldest": "Мария",
+  "under_18": 1
+}

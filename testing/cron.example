@@ -1,0 +1,2 @@
+*/5 * * * * QA_RUN=/absolute/path/.logs bash /absolute/path/testing/linux_kernel/run_tests.sh >> /absolute/path/.logs/kernel-cron.log 2>&1
+*/15 * * * * QA_RUN=/absolute/path/.logs bash /absolute/path/testing/json_validation/run_all.sh >> /absolute/path/.logs/json-cron.log 2>&1
